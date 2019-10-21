@@ -28,20 +28,27 @@ class Task implements Runnable{
 
 public class Threads {
     public static void main(String args[]){
-        Task t1 = new Task();
-        Task t2 = new Task();
-        Task t3 = new Task();
-        Task t4 = new Task();
-        Task t5 = new Task();
+//        Task t1 = new Task();
+//        Task t2 = new Task();
+//        Task t3 = new Task();
+//        Task t4 = new Task();
+//        Task t5 = new Task();
+//
+//        ExecutorService pool = Executors.newFixedThreadPool(3);
+//
+//        pool.execute(t1);
+//        pool.execute(t2);
+//        pool.execute(t3);
+//        pool.execute(t4);
+//        pool.execute(t5);
+
+//        pool.shutdown();
 
         ExecutorService pool = Executors.newFixedThreadPool(3);
-
-        pool.execute(t1);
-        pool.execute(t2);
-        pool.execute(t3);
-        pool.execute(t4);
-        pool.execute(t5);
-
+        for(int i=0;i<5;i++){
+            Task t= new Task();
+            pool.execute(t);
+        }
         pool.shutdown();
     }
 }
