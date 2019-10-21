@@ -1,8 +1,10 @@
 package x;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 
 
 class Task implements Runnable{
@@ -44,11 +46,14 @@ public class Threads {
 
 //        pool.shutdown();
 
-        ExecutorService pool = Executors.newFixedThreadPool(3);
-        for(int i=0;i<5;i++){
-            Task t= new Task();
-            pool.execute(t);
-        }
-        pool.shutdown();
+//        ExecutorService pool = Executors.newFixedThreadPool(3);
+//        for(int i=0;i<5;i++){
+//            Task t= new Task();
+//            pool.execute(t);
+//        }
+//        pool.shutdown();
+
+
+
     }
 }
