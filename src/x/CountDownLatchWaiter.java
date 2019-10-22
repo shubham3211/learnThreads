@@ -20,7 +20,6 @@ class Waiter extends Thread{
 
         public void run(){
             try{
-                Thread.sleep(1000);
                 latch.await();
                 System.out.println("Both the latches are down");
             }catch(InterruptedException e){
@@ -38,9 +37,9 @@ class Decrement extends Thread{
 
     public void run(){
         try{
+            Thread.sleep(1000);
             latch.countDown();
             System.out.println("First latch down");
-            Thread.sleep(1000);
         }catch(InterruptedException e){
             e.printStackTrace();
         }finally{
