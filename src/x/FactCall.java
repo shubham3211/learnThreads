@@ -21,7 +21,7 @@ class Factorial implements Callable<Integer>{
 
 public class FactCall {
     public static void main(String args[]){
-        ExecutorService e = Executors.newFixedThreadPool(3);
+        ScheduledExecutorService e = Executors.newScheduledThreadPool(3);
         List<Future<Integer>> list = new ArrayList<Future<Integer>>();
         for(int i=0;i<5;i++){
             Factorial f = new Factorial(i);
