@@ -27,9 +27,9 @@ class Fact implements Callable<Integer> {
 public class Factorial {
     public static void main(String args[]){
 //        ExecutorService e = Executors.newFixedThreadPool(3);
-        ExecutorService e = Executors.newSingleThreadExecutor();
+        ExecutorService e = Executors.newCachedThreadPool();
         ArrayList<Future<Integer>> l= new ArrayList<Future<Integer>>();
-        for(int i=0;i<5;i++){
+        for(int i=0;i<10;i++){
             Future<Integer> f = e.submit(new Fact(i));
             l.add(f);
         }
